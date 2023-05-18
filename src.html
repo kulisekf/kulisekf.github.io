@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>src package &mdash; Inscriptions-extractor 0.1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="src.enums package" href="src.enums.html" />
+    <link rel="prev" title="src" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Inscriptions-extractor
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">src</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">src package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="src.enums.html">src.enums package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-src.main">src.main module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#src.main.extract_inscription"><code class="docutils literal notranslate"><span class="pre">extract_inscription()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#src.main.find_block"><code class="docutils literal notranslate"><span class="pre">find_block()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#src.main.find_inscription"><code class="docutils literal notranslate"><span class="pre">find_inscription()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#src.main.find_transaction"><code class="docutils literal notranslate"><span class="pre">find_transaction()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#src.main.hash_of_data"><code class="docutils literal notranslate"><span class="pre">hash_of_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#src.main.length_reader"><code class="docutils literal notranslate"><span class="pre">length_reader()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#src.main.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#src.main.read_bytes"><code class="docutils literal notranslate"><span class="pre">read_bytes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#src.main.read_tx_in"><code class="docutils literal notranslate"><span class="pre">read_tx_in()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#src.main.read_tx_out"><code class="docutils literal notranslate"><span class="pre">read_tx_out()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#src.main.read_varint"><code class="docutils literal notranslate"><span class="pre">read_varint()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#src.main.read_varint_transaction"><code class="docutils literal notranslate"><span class="pre">read_varint_transaction()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#src.main.reverse"><code class="docutils literal notranslate"><span class="pre">reverse()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#src.main.save_file"><code class="docutils literal notranslate"><span class="pre">save_file()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#src.main.save_inscription"><code class="docutils literal notranslate"><span class="pre">save_inscription()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#src.main.skip_witness"><code class="docutils literal notranslate"><span class="pre">skip_witness()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#src.main.taproot_activated_block"><code class="docutils literal notranslate"><span class="pre">taproot_activated_block()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#src.main.tx_in_count"><code class="docutils literal notranslate"><span class="pre">tx_in_count()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#src.main.what_to_find"><code class="docutils literal notranslate"><span class="pre">what_to_find()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-src">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Inscriptions-extractor</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">src</a></li>
+      <li class="breadcrumb-item active">src package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/src.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="src-package">
+<h1>src package<a class="headerlink" href="#src-package" title="Permalink to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="src.enums.html">src.enums package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="src.enums.html#module-src.enums">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src.enums.html#src.enums.BitcoinOP"><code class="docutils literal notranslate"><span class="pre">BitcoinOP</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-src.main">
+<span id="src-main-module"></span><h2>src.main module<a class="headerlink" href="#module-src.main" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="src.main.extract_inscription">
+<span class="sig-prename descclassname"><span class="pre">src.main.</span></span><span class="sig-name descname"><span class="pre">extract_inscription</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inscription</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="reference internal" href="_modules/src/main.html#extract_inscription"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.main.extract_inscription" title="Permalink to this definition"></a></dt>
+<dd><p>This function is used if a part with inscriptions was found in the witness - it goes through the rest and extracts purely the inscription data stored here</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">param inscription str<span class="colon">:</span></dt>
+<dd class="field-odd"><p>string with the witness data part that contains the inscription data</p>
+</dd>
+<dt class="field-even">returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list containing 2 values. The value at index 0 contains type of inscription data, the value at index 1 contains the inscription data itself</p>
+</dd>
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of strings</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.main.find_block">
+<span class="sig-prename descclassname"><span class="pre">src.main.</span></span><span class="sig-name descname"><span class="pre">find_block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">blockHash</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DIR</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="reference internal" href="_modules/src/main.html#find_block"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.main.find_block" title="Permalink to this definition"></a></dt>
+<dd><p>This function goes through the blkXXXX.dat files and searches them for the required block based on the block hash value</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">param str blockHash<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Hash of the block to be found by the function - it is entered when starting the program within the console</p>
+</dd>
+<dt class="field-even">param str DIR<span class="colon">:</span></dt>
+<dd class="field-even"><p>The path to the folder that contains the blkXXXX.dat files (absolute/relative - preferred) - it is entered when starting the program within the console</p>
+</dd>
+<dt class="field-odd">returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A list containing 2 values. The value at index 0 contains the name of the blkXXX.dat file in which the searched block is located, the value at index 1 contains the position in the file where the data of the searched block begins (even before the magic number and block size)</p>
+</dd>
+<dt class="field-even">rtype<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of strings</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.main.find_inscription">
+<span class="sig-prename descclassname"><span class="pre">src.main.</span></span><span class="sig-name descname"><span class="pre">find_inscription</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fileName</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zacatekWitness</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inCount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DIR</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="reference internal" href="_modules/src/main.html#find_inscription"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.main.find_inscription" title="Permalink to this definition"></a></dt>
+<dd><p>This function loops through the entire transaction output and returns its data for build RawTX</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">param f BufferedReader<span class="colon">:</span></dt>
+<dd class="field-odd"><p>File to read data (bytes)</p>
+</dd>
+<dt class="field-even">returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>used for build RawTX</p>
+</dd>
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.main.find_transaction">
+<span class="sig-prename descclassname"><span class="pre">src.main.</span></span><span class="sig-name descname"><span class="pre">find_transaction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fileName</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zacatekBloku</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">txHash</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DIR</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="reference internal" href="_modules/src/main.html#find_transaction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.main.find_transaction" title="Permalink to this definition"></a></dt>
+<dd><p>This function goes through the individual transactions of the block and tries to find the specified transaction</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">param str fileName<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The name of the file where the transaction should be located</p>
+</dd>
+<dt class="field-even">param str zacatekBloku<span class="colon">:</span></dt>
+<dd class="field-even"><p>The position in the blkXXX.dat file where the data of the block in which the transaction should be located begins</p>
+</dd>
+<dt class="field-odd">param str txHash<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Hash of the searched transaction - it is entered when starting the program within the console</p>
+</dd>
+<dt class="field-even">param str DIR<span class="colon">:</span></dt>
+<dd class="field-even"><p>The path to the folder that contains the blkXXXX.dat files (absolute/relative - preferred) - it is entered when starting the program within the console</p>
+</dd>
+<dt class="field-odd">returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>In case of successful transaction finding + if the transaction contains a witness part return list containing 2 values. The value at index 0 contains the position in the file where the witness part of the data of the searched transaction begins, the value at index 1 contains number of transaction inputs (for subsequent correct evaluation of the witness part)</p>
+</dd>
+<dt class="field-even">rtype<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of strings</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.main.hash_of_data">
+<span class="sig-prename descclassname"><span class="pre">src.main.</span></span><span class="sig-name descname"><span class="pre">hash_of_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/src/main.html#hash_of_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.main.hash_of_data" title="Permalink to this definition"></a></dt>
+<dd><p>This function calculates a 2x sha256 hash of the input data</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">param str data<span class="colon">:</span></dt>
+<dd class="field-odd"><p>input data whose hash is to be calculated</p>
+</dd>
+<dt class="field-even">returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>2x sha256 hash of input data</p>
+</dd>
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.main.length_reader">
+<span class="sig-prename descclassname"><span class="pre">src.main.</span></span><span class="sig-name descname"><span class="pre">length_reader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inscription</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="reference internal" href="_modules/src/main.html#length_reader"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.main.length_reader" title="Permalink to this definition"></a></dt>
+<dd><p>This function is used to read the inscription data from the witness - it finds out how many bytes the data contains + how many bytes carry this information</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">param inscription str<span class="colon">:</span></dt>
+<dd class="field-odd"><p>string with the witness data part that contains the inscription data</p>
+</dd>
+<dt class="field-even">returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list containing 2 values. The value at index 0 contains number of bytes that indicated, how many bytes contain inscription data in hex format, the value at index 1 contains the number of bytes that carry information on how many subsequent bytes contain inscription data (these bytes do not contain the inscription data itself, they are skipped when extracting the inscription)</p>
+</dd>
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of int</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.main.main">
+<span class="sig-prename descclassname"><span class="pre">src.main.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/main.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.main.main" title="Permalink to this definition"></a></dt>
+<dd><p>The main function, which sequentially calls individual sub-parts while the program is running. At the same time, exception catching is performed at this level</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.main.read_bytes">
+<span class="sig-prename descclassname"><span class="pre">src.main.</span></span><span class="sig-name descname"><span class="pre">read_bytes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BufferedReader</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">byte_order</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'L'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/src/main.html#read_bytes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.main.read_bytes" title="Permalink to this definition"></a></dt>
+<dd><p>This function reads the specified number of bytes and also changes the notation from little-endian to classic by default</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">param BufferedReader file<span class="colon">:</span></dt>
+<dd class="field-odd"><p>File to read data (bytes)</p>
+</dd>
+<dt class="field-even">param int n<span class="colon">:</span></dt>
+<dd class="field-even"><p>Number of bytes to read</p>
+</dd>
+<dt class="field-odd">param str byte_order<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Specifies endianity - default “L” (little-endian)</p>
+</dd>
+<dt class="field-even">returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>read bytes in big-endian (classical) notation format</p>
+</dd>
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.main.read_tx_in">
+<span class="sig-prename descclassname"><span class="pre">src.main.</span></span><span class="sig-name descname"><span class="pre">read_tx_in</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BufferedReader</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/src/main.html#read_tx_in"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.main.read_tx_in" title="Permalink to this definition"></a></dt>
+<dd><p>This function loops through the entire transaction input and returns its data for build RawTX</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">param f BufferedReader<span class="colon">:</span></dt>
+<dd class="field-odd"><p>File to read data (bytes)</p>
+</dd>
+<dt class="field-even">returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>used for build RawTX</p>
+</dd>
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.main.read_tx_out">
+<span class="sig-prename descclassname"><span class="pre">src.main.</span></span><span class="sig-name descname"><span class="pre">read_tx_out</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BufferedReader</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/src/main.html#read_tx_out"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.main.read_tx_out" title="Permalink to this definition"></a></dt>
+<dd><p>This function loops through the entire transaction output and returns its data for build RawTX</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">param f BufferedReader<span class="colon">:</span></dt>
+<dd class="field-odd"><p>File to read data (bytes)</p>
+</dd>
+<dt class="field-even">returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>used for build RawTX</p>
+</dd>
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.main.read_varint">
+<span class="sig-prename descclassname"><span class="pre">src.main.</span></span><span class="sig-name descname"><span class="pre">read_varint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BufferedReader</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/src/main.html#read_varint"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.main.read_varint" title="Permalink to this definition"></a></dt>
+<dd><p>This function reads one byte of data and decides whether this byte contains the searched data, or whether it contains information on how many subsequent bytes contain the searched data, which it then reads</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">param BufferedReader file<span class="colon">:</span></dt>
+<dd class="field-odd"><p>File to read data (bytes)</p>
+</dd>
+<dt class="field-even">returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>value stored in one or more (2, 4, 8) bytes of data</p>
+</dd>
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.main.read_varint_transaction">
+<span class="sig-prename descclassname"><span class="pre">src.main.</span></span><span class="sig-name descname"><span class="pre">read_varint_transaction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BufferedReader</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/src/main.html#read_varint_transaction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.main.read_varint_transaction" title="Permalink to this definition"></a></dt>
+<dd><p>This function works in the same way as the read_variant() function, with the only difference that it needs to store and return all the data it works with - it is used, for example, to calculate the transaction hash</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">param BufferedReader file<span class="colon">:</span></dt>
+<dd class="field-odd"><p>File to read data (bytes)</p>
+</dd>
+<dt class="field-even">returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>all the loaded data that the function worked with</p>
+</dd>
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.main.reverse">
+<span class="sig-prename descclassname"><span class="pre">src.main.</span></span><span class="sig-name descname"><span class="pre">reverse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/src/main.html#reverse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.main.reverse" title="Permalink to this definition"></a></dt>
+<dd><p>This function turns a little-endian string into big-endian</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">param str input<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Data sequence to change endianity</p>
+</dd>
+<dt class="field-even">returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Data with changed endianness</p>
+</dd>
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.main.save_file">
+<span class="sig-prename descclassname"><span class="pre">src.main.</span></span><span class="sig-name descname"><span class="pre">save_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">suffix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">result_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/src/main.html#save_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.main.save_file" title="Permalink to this definition"></a></dt>
+<dd><p>This function saves the file containing the inscription</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">param suffix str<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Suffix of the file in which the data will be stored</p>
+</dd>
+<dt class="field-even">param data str<span class="colon">:</span></dt>
+<dd class="field-even"><p>Inscription data to save to file</p>
+</dd>
+<dt class="field-odd">param result_dir str<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The path to the folder where the inscription file should be saved (absolute/relative - preferred) - entered when starting the program in the console</p>
+</dd>
+<dt class="field-even">returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.main.save_inscription">
+<span class="sig-prename descclassname"><span class="pre">src.main.</span></span><span class="sig-name descname"><span class="pre">save_inscription</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inscription</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">result_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/src/main.html#save_inscription"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.main.save_inscription" title="Permalink to this definition"></a></dt>
+<dd><p>This function evaluates the inscription type and saves it to the correct file</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">param type str<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Data inscription type - the file type for data storage depends on it</p>
+</dd>
+<dt class="field-even">param inscription str<span class="colon">:</span></dt>
+<dd class="field-even"><p>Inscription data to save to file</p>
+</dd>
+<dt class="field-odd">param result_dir str<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The path to the folder where the inscription file should be saved (absolute/relative - preferred) - entered when starting the program in the console</p>
+</dd>
+<dt class="field-even">returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.main.skip_witness">
+<span class="sig-prename descclassname"><span class="pre">src.main.</span></span><span class="sig-name descname"><span class="pre">skip_witness</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BufferedReader</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inCount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/src/main.html#skip_witness"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.main.skip_witness" title="Permalink to this definition"></a></dt>
+<dd><p>This function value is all read and skips the entire witness part of the data when passing the transactional data with which the function worked</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">param f BufferedReader<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The file from which the data is read</p>
+</dd>
+<dt class="field-even">param int inCount<span class="colon">:</span></dt>
+<dd class="field-even"><p>Number of transaction inputs - for the witness part to pass correctly, it is necessary to know how many inputs it contains data for</p>
+</dd>
+<dt class="field-odd">returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.main.taproot_activated_block">
+<span class="sig-prename descclassname"><span class="pre">src.main.</span></span><span class="sig-name descname"><span class="pre">taproot_activated_block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">blockHash</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/src/main.html#taproot_activated_block"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.main.taproot_activated_block" title="Permalink to this definition"></a></dt>
+<dd><p>This function checks whether the found block corresponds to the first taproot block - inscriptions are possible thanks to taproot</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">param str blockHash<span class="colon">:</span></dt>
+<dd class="field-odd"><p>block Hash to be compared with the hash of the activation taproot block</p>
+</dd>
+<dt class="field-even">returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None - if a matching block hash is found, the user is asked through the console whether the program should continue the evaluation or whether it should end (it is necessary to enter the value Y/N in the console)</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.main.tx_in_count">
+<span class="sig-prename descclassname"><span class="pre">src.main.</span></span><span class="sig-name descname"><span class="pre">tx_in_count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BufferedReader</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span></span></span><a class="reference internal" href="_modules/src/main.html#tx_in_count"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.main.tx_in_count" title="Permalink to this definition"></a></dt>
+<dd><p>This function detects the number of inputs to the transaction, evaluates any segwit flag, and at the same time returns a value for building RawTX</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">param f BufferedReader<span class="colon">:</span></dt>
+<dd class="field-odd"><p>File to read data (bytes)</p>
+</dd>
+<dt class="field-even">returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns a total of 3 values - 1. value is witness identifier (True/False); 2. value is number of inputs; 3. value is all the loaded data that the function worked with</p>
+</dd>
+<dt class="field-odd">rtype<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool, int, str</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.main.what_to_find">
+<span class="sig-prename descclassname"><span class="pre">src.main.</span></span><span class="sig-name descname"><span class="pre">what_to_find</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="reference internal" href="_modules/src/main.html#what_to_find"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.main.what_to_find" title="Permalink to this definition"></a></dt>
+<dd><p>This function, using argparse, loads the necessary data entered into the terminal when the application is started and returns for their subsequent use</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A list containing 4 values. In this order - the block hash of the block that contains the inscription, the hash of the transaction that contains the inscription, the path to the folder that contains the blkXXXX.dat files and the path to the folder where the inscription is to be stored</p>
+</dd>
+<dt class="field-even">rtype<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of strings</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+</section>
+<section id="module-src">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-src" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="src" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="src.enums.html" class="btn btn-neutral float-right" title="src.enums package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Filip Kulíšek.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

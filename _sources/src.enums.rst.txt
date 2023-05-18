@@ -1,0 +1,10 @@
+src.enums package
+=================
+
+Module contents
+---------------
+
+.. automodule:: src.enums
+   :members:
+   :undoc-members:
+   :show-inheritance:
